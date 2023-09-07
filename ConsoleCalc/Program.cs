@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Text;
 
 class Calculator
 {
     static void Main()
     {
+        Console.OutputEncoding = Encoding.UTF8;
         while (true)
         {
             Console.WriteLine("Калькулятор:");
