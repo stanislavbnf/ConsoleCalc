@@ -61,16 +61,64 @@ class Program
 
             else if (number == 2)
             {
+                Console.ForegroundColor = ConsoleColor.White;
 
+                Console.WriteLine("Введите первое число");
+                string a = Console.ReadLine();
+                int chislo1;
+                bool usernum1 = int.TryParse(a, out chislo1);
+
+
+                Console.WriteLine("Введите второе  число");
+                string b = Console.ReadLine();
+                int chislo2;
+                bool usernum2 = int.TryParse(b, out chislo2);
+
+                int total = chislo1 - chislo2;
+                Console.Clear();
+                Console.WriteLine("ваш результат: " + total);
+                continue;
             }
             else if (number == 3)
-            { 
+            {
+                Console.ForegroundColor = ConsoleColor.White;
 
+                Console.WriteLine("Введите первое число");
+                string a = Console.ReadLine();
+                int chislo1;
+                bool usernum1 = int.TryParse(a, out chislo1);
+
+
+                Console.WriteLine("Введите второе  число");
+                string b = Console.ReadLine();
+                int chislo2;
+                bool usernum2 = int.TryParse(b, out chislo2);
+
+                int total = chislo1 * chislo2;
+                Console.Clear();
+                Console.WriteLine("ваш результат: " + total);
+                continue;
             }
 
             else if (number == 4)
             {
+                Console.ForegroundColor = ConsoleColor.White;
 
+                Console.WriteLine("Введите первое число");
+                string a = Console.ReadLine();
+                int chislo1;
+                bool usernum1 = int.TryParse(a, out chislo1);
+
+
+                Console.WriteLine("Введите второе  число");
+                string b = Console.ReadLine();
+                int chislo2;
+                bool usernum2 = int.TryParse(b, out chislo2);
+
+                int total = chislo1 / chislo2;
+                Console.Clear();
+                Console.WriteLine("ваш результат: " + total);
+                continue;
             }
 
 
