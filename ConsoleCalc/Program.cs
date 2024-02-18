@@ -40,30 +40,56 @@ class Program
 
             else if (number == 1)
             {
-                Console.Clear();
-   
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Сложение");
-                Console.WriteLine("Введите первое число");
 
-                string a = Console.ReadLine();
-                a = a.Replace(",", ".");
-                int chislo1;
-                bool usernum1 = int.TryParse(a, out chislo1);
+                while (true)
+                {
+                    // Eсли я ввожу десятичные через точку или запятую то цикл начинается с начала, с места где  
+                    // просит опять ввести первую цифру. Если числа целые он считает
+                   
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Сложение");
+                    Console.WriteLine("Введите первое число");
+
+                    string a = Console.ReadLine();
+                    a = a.Replace(",", ".");
+                    double chislo1;
+                    bool usernum1 = double.TryParse(a, out chislo1);
 
 
-                Console.WriteLine("Введите второе  число");
 
-                string b = Console.ReadLine();
-                b = b.Replace(",", ".");
-                int chislo2;
-                bool usernum2 = int.TryParse(b, out chislo2);
 
-                double total = chislo1 + chislo2;
-             
-                Console.Clear();
-                Console.WriteLine("ваш результат: " + total);
-                continue;
+                    Console.WriteLine("Введите второе  число");
+
+                    string b = Console.ReadLine();
+                    b = b.Replace(",", ".");
+                    double chislo2;
+                    bool usernum2 = double.TryParse(b, out chislo2);
+
+                    if (usernum1 && usernum2)
+
+                    {
+                        double total;
+                        total = Math.Round(chislo1 + chislo2, 12);
+                        Console.Clear();
+                        Console.WriteLine("ваш результат: " + total);
+                        break;
+                    }
+
+                    //Также  не работает этот этот else  если ввожу буквы
+               
+                    else
+                    {
+                        Console.WriteLine("Недопустимые символы");
+                        continue;   
+                    }
+                }
+                
+
+            
+            
+            
+           
 
             }
 
