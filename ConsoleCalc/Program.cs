@@ -46,7 +46,7 @@ class Program
                     // Eсли я ввожу десятичные через точку или запятую то цикл начинается с начала, с места где  
                     // просит опять ввести первую цифру. Если числа целые он считает
                    
-                    Console.Clear();
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Сложение");
                     Console.WriteLine("Введите первое число");
@@ -72,7 +72,7 @@ class Program
                         double total;
                         total = Math.Round(chislo1 + chislo2, 12);
                         Console.Clear();
-                        Console.WriteLine("ваш результат: " + total);
+                        Console.WriteLine(chislo1 + "+" + chislo2  + "=" + total);
                         break;
                     }
 
