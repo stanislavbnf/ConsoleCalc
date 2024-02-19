@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Globalization;
 using System.Text;
 
 class Program
 {
     static void Main()
     {
+        var info = CultureInfo.CurrentCulture.Name;
         Console.OutputEncoding = Encoding.UTF8;
         while (true)
         {
@@ -43,10 +45,8 @@ class Program
 
                 while (true)
                 {
-                    // Eсли я ввожу десятичные через точку или запятую то цикл начинается с начала, с места где  
-                    // просит опять ввести первую цифру. Если числа целые он считает
-                   
-                    
+
+
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Сложение");
                     Console.WriteLine("Введите первое число");
@@ -55,6 +55,7 @@ class Program
                     a = a.Replace(",", ".");
                     double chislo1;
                     bool usernum1 = double.TryParse(a, out chislo1);
+                    //bool usernum1 = double.TryParse(a, NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"), out chislo1);
 
 
 
@@ -65,6 +66,7 @@ class Program
                     b = b.Replace(",", ".");
                     double chislo2;
                     bool usernum2 = double.TryParse(b, out chislo2);
+                    //bool usernum2 = double.TryParse(b, NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"), out chislo2);
 
                     if (usernum1 && usernum2)
 
@@ -72,94 +74,138 @@ class Program
                         double total;
                         total = Math.Round(chislo1 + chislo2, 12);
                         Console.Clear();
-                        Console.WriteLine(chislo1 + "+" + chislo2  + "=" + total);
+                        Console.WriteLine(chislo1 + "+" + chislo2 + "=" + total);
                         break;
                     }
 
-                    //Также  не работает этот этот else  если ввожу буквы
-               
+
+
                     else
                     {
                         Console.WriteLine("Недопустимые символы");
-                        continue;   
+                        continue;
                     }
                 }
-                
-
-            
-            
-            
-           
-
             }
 
             else if (number == 2)
             {
-                Console.Clear();
-                Console.WriteLine("Вычитание");
-                Console.ForegroundColor = ConsoleColor.White;
-
-                Console.WriteLine("Введите первое число");
-                string a = Console.ReadLine();
-                int chislo1;
-                bool usernum1 = int.TryParse(a, out chislo1);
+                while (true)
+                {
 
 
-                Console.WriteLine("Введите второе  число");
-                string b = Console.ReadLine();
-                int chislo2;
-                bool usernum2 = int.TryParse(b, out chislo2);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Вычитание");
+                    Console.WriteLine("Введите первое число");
 
-                int total = chislo1 - chislo2;
-                Console.Clear();
-                Console.WriteLine("ваш результат: " + total);
-                continue;
+                    string a = Console.ReadLine();
+                    a = a.Replace(",", ".");
+                    double chislo1;
+                    bool usernum1 = double.TryParse(a, out chislo1);
+                    //bool usernum1 = double.TryParse(a, NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"), out chislo1);
+
+
+
+
+                    Console.WriteLine("Введите второе  число");
+
+                    string b = Console.ReadLine();
+                    b = b.Replace(",", ".");
+                    double chislo2;
+                    bool usernum2 = double.TryParse(b, out chislo2);
+                    //bool usernum2 = double.TryParse(b, NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"), out chislo2);
+
+                    if (usernum1 && usernum2)
+
+                    {
+                        double total;
+                        total = Math.Round(chislo1 - chislo2, 12);
+                        Console.Clear();
+                        Console.WriteLine(chislo1 + "-" + chislo2 + "=" + total);
+                        break;
+                    }
+
+
+
+                    else
+                    {
+                        Console.WriteLine("Недопустимые символы");
+                        continue;
+                    }
+                }
             }
+
+
             else if (number == 3)
             {
-                Console.Clear();
-                Console.WriteLine("Умножение");
-                Console.ForegroundColor = ConsoleColor.White;
-
-                Console.WriteLine("Введите первое число");
-                string a = Console.ReadLine();
-                int chislo1;
-                bool usernum1 = int.TryParse(a, out chislo1);
+                while (true)
+                {
 
 
-                Console.WriteLine("Введите второе  число");
-                string b = Console.ReadLine();
-                int chislo2;
-                bool usernum2 = int.TryParse(b, out chislo2);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Умножение");
+                    Console.WriteLine("Введите первое число");
 
-                int total = chislo1 * chislo2;
-                Console.Clear();
-                Console.WriteLine("ваш результат: " + total);
-                continue;
+                    string a = Console.ReadLine();
+                    a = a.Replace(",", ".");
+                    double chislo1;
+                    bool usernum1 = double.TryParse(a, out chislo1);
+                    //bool usernum1 = double.TryParse(a, NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"), out chislo1);
+
+
+
+
+                    Console.WriteLine("Введите второе  число");
+
+                    string b = Console.ReadLine();
+                    b = b.Replace(",", ".");
+                    double chislo2;
+                    bool usernum2 = double.TryParse(b, out chislo2);
+                    //bool usernum2 = double.TryParse(b, NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"), out chislo2);
+
+                    if (usernum1 && usernum2)
+
+                    {
+                        double total;
+                        total = Math.Round(chislo1 * chislo2, 12);
+                        Console.Clear();
+                        Console.WriteLine(chislo1 + "*" + chislo2 + "=" + total);
+                        break;
+                    }
+
+
+
+                    else
+                    {
+                        Console.WriteLine("Недопустимые символы");
+                        continue;
+                    }
+                }
             }
 
             else if (number == 4)
             {
 
-               
+
                 while (true)
                 {
 
 
-                Console.Clear();
-                    Console.WriteLine("Деление");
+                    
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Деление");
+                  
 
-                Console.WriteLine("Введите первое число");
-                string a = Console.ReadLine();
-                int chislo1;
-                bool usernum1 = int.TryParse(a, out chislo1);
+                    Console.WriteLine("Введите первое число");
+                    string a = Console.ReadLine();
+                    double chislo1;
+                    bool usernum1 = double.TryParse(a, out chislo1);
 
 
-                Console.WriteLine("Введите второе  число");
-                string b = Console.ReadLine();
-                int chislo2;
-                bool usernum2 = int.TryParse(b, out chislo2);
+                    Console.WriteLine("Введите второе  число");
+                    string b = Console.ReadLine();
+                    double chislo2;
+                    bool usernum2 = double.TryParse(b, out chislo2);
 
 
                     if (chislo2 == 0)
@@ -167,22 +213,48 @@ class Program
                         Console.WriteLine("Недопустимые символы");
                         continue;
                     }
-                    else
+
+                    else if (usernum1 && usernum2)
+
                     {
-
                         double total;
-                        total = Math.Round(Convert.ToDouble(chislo1) / Convert.ToDouble(chislo2), 4);
-
+                        total = Math.Round(chislo1 / chislo2, 12);
                         Console.Clear();
-                        Console.WriteLine("ваш результат: " + total);
-                        break;  
-
+                        Console.WriteLine(chislo1 + "/" + chislo2 + "=" + total);
+                        break;
                     }
-                   
+
+                    //else
+                    //{
+
+                    //    double total;
+                    //    total = Math.Round(Convert.ToDouble(chislo1) / Convert.ToDouble(chislo2), 4);
+
+                    //    Console.Clear();
+                    //    Console.WriteLine("ваш результат: " + total);
+                    //    break;
+
+                    //}
+
                 }
-            
+
             }
 
+            else if (number <= 0)
+
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Введите правильный номер");
+            }
+
+            else if (number >=6)
+
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Введите правильный номер");
+            }
 
 
 
